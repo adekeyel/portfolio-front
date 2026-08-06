@@ -35,7 +35,7 @@ export default function Layout() {
       <header style={headerStyle}>
         <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72 }}>
           <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <span style={logoBoxStyle}>&lt;/&gt;</span>
+            <span style={logoBoxStyle}><img src="/logo-mark.png" alt="" style={{ height: 22, width: 'auto', display: 'block' }} /></span>
             <span style={{ fontFamily: 'var(--font-display)', fontSize: 19, fontWeight: 600 }}>{p.name}</span>
           </Link>
 
@@ -85,7 +85,9 @@ function Footer({ profile }) {
     <footer style={{ borderTop: '1px solid rgba(237,239,247,0.08)', padding: '56px 0 40px' }}>
       <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr', gap: 32 }}>
         <div>
-          <div style={{ fontFamily: 'var(--font-display)', fontSize: 20, marginBottom: 10 }}>{profile.name}</div>
+          <div style={{ background: 'var(--paper)', borderRadius: 10, padding: '14px 18px', display: 'inline-block', marginBottom: 16 }}>
+            <img src="/logo-full.png" alt={profile.name} style={{ height: 40, width: 'auto', display: 'block' }} />
+          </div>
           <p style={{ color: 'var(--slate)', fontSize: 14, maxWidth: 320 }}>{profile.tagline}</p>
           <p className="mono" style={{ color: 'var(--slate-dim)', fontSize: 12.5, marginTop: 14 }}>{profile.company}</p>
         </div>
@@ -126,9 +128,8 @@ const errorBannerStyle = {
 }
 
 const logoBoxStyle = {
-  width: 32, height: 32, borderRadius: 6, background: 'var(--blue)',
-  display: 'flex', alignItems: 'center', justifyContent: 'center',
-  fontFamily: 'var(--font-mono)', fontSize: 13, fontWeight: 600, color: 'white'
+  width: 34, height: 34, borderRadius: 8, background: 'var(--paper)',
+  display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none'
 }
 
 const toggleStyle = { fontSize: 20, padding: 4 }
